@@ -46,6 +46,7 @@ function mset_parse($str,$key_filter_func = null){
     $ret[$last_key] = $last_content;
     #### remove empty keys (after filtered)
     $ret = array_filter($ret);
+    $ret = array_map('trim',$ret);
     #### finally return result
     return $ret;
 }
