@@ -14,8 +14,8 @@ third key => multi line
 ## Why?
 
 I needed a simple config file format and none of the existing solutions worked for me. All of them 
-are more complicated (for simple use cases). Also, at [SunSed](https://www.sunsed.com/tags/s/mset) we use 
-the same syntax for file metadata and also to set multile variables at once (that's where the name comes from: Multi SET).
+are more complicated (for simple use cases). Also, at [SunSed](https://www.sunsed.com/) we use 
+the same syntax for file metadata and also to set multile variables at once using [MSET tag](https://www.sunsed.com/tags/s/mset) (that's where the name comes from: Multi SET).
 
 Also, I'm crazy about performance!
 
