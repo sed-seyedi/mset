@@ -22,7 +22,7 @@ to configure. For those applications, JSON is an overkill and INI files are too 
 Mset is also very fast! It's only 50 lines of code and can be included in any project. It's
 also very easy to create an Mset parser in any other language.
  
-We use Mset at [SunSed](https://www.sunsed.com/) to set file metadata and also to set multile variables at once using [MSET tag](https://www.sunsed.com/tags/s/mset) (that's where the name comes from: Multi SET).
+We use Mset at [SunSed](https://www.sunsed.com/) to set file metadata and also to set multiple variables at once using [MSET tag](https://www.sunsed.com/tags/s/mset) (that's where the name comes from: Multi SET).
 
 ## How?
 
