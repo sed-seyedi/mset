@@ -1,23 +1,28 @@
 # mset
 
-Mset is a simple and userfriendly configuration file format. You can use it instead of .json and .ini files.
+Mset is a simple and user friendly configuration file format. You can use it instead of .json and .ini files.
 
 **example:**
 
 ```
-key => value
+key         => value
 another key => another value
-third key => multi line
- values will be turned into a single line and separated by a single space.
+third key   => you can also pass a value
+               with multiple lines.
 ```
+
+Keys are case and space insensitive -- it's easier to remember and type them.
 
 ## Why?
 
-I needed a simple config file format and none of the existing solutions worked for me. All of them 
-are more complicated (for simple use cases). Also, at [SunSed](https://www.sunsed.com/) we use 
-the same syntax for file metadata and also to set multile variables at once using [MSET tag](https://www.sunsed.com/tags/s/mset) (that's where the name comes from: Multi SET).
+Simplicity and performance! Some applications just need a simple set of key value pairs 
+to configure. For those applications, JSON is an overkill and INI files are too restrictive 
+(keys must use _ to separate words and many more).
 
-Also, I'm crazy about performance!
+Mset is also very fast! It's only 50 lines of code and can be included in any project. It's
+also very easy to create an Mset parser in any other language.
+ 
+We use Mset at [SunSed](https://www.sunsed.com/) to set file metadata and also to set multile variables at once using [MSET tag](https://www.sunsed.com/tags/s/mset) (that's where the name comes from: Multi SET).
 
 ## How?
 
@@ -33,28 +38,19 @@ Array
 (
     [key] => value
     [another-key] => another value
-    [third-key] => multi line values will be turned into a single line and separated by a single space.
+    [third-key] => you can also pass a value with multiple lines.
 )
 ```
 
 ## Key format
 
-Keys are lowercased and then spaces is replaced with one dash. For example:
-
-```
-(original key) => (transformation)
-is good test? => is-good-test?
-is good test??? => is-good-good?
-user    is    good? => is-good-test?
-something((good)) => something(good)
-```
-
-Remember, keep it simple! For example, `api key` can be provided in any of the following ways and it still works:
+Keys are lowercased, trimmed and then multiple spaces are replace with one dash (`-`). Users can
+use any character in keys (`?!*$(*`) but they cannot repeat these special characters (e.g. `--` will become `-`).
 
 ```
 api key =>
 api-key =>
-  API   key   =>
+API   keY   =>
 ```
 
 ## Custom Key format
